@@ -1,0 +1,146 @@
+.header {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+  // .header__container
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 55px 30px;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  // .social__item
+  &__item:not(:last-child) {
+    margin-right: 40px;
+  }
+  // .social__link
+  &__link {
+    display: block;
+    @include bg;
+    transition: opacity $transition;
+    &:hover {
+      opacity: 0.8;
+      transition: opacity $transition;
+    }
+  }
+  // .social__link--fb
+  &__link--fb {
+    background-image: url("/img/icons/fb.svg");
+    width: 11px;
+    height: 20px;
+  }
+  // .social__link--tw
+  &__link--tw {
+    background-image: url("/img/icons/tw.svg");
+    width: 20px;
+    height: 17px;
+  }
+}
+.logo {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 2px;
+  color: $white;
+  text-transform: uppercase;
+}
+.burger {
+  position: relative;
+  width: 48px;
+  height: 10px;
+  &:hover {
+    .burger__line {
+      background-color: $accent;
+      transition: background-color $transition;
+    }
+  }
+  &__line {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    transition: background-color $transition;
+    &:last-child {
+      top: auto;
+      bottom: 0;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  left: -150vw;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: $neptune;
+  color: $white;
+  transition: left $transition;
+  &--open {
+    left: 0;
+    transition: left $transition;
+  }
+  // .menu__close
+  &__close {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 10%;
+    top: 10%;
+  }
+  // .menu__close-line
+  &__close-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $white;
+    &:first-child {
+      transform: rotate(45deg);
+    }
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+  // .menu__nav
+  &__nav {
+    width: 100%;
+    height: 100%;
+  }
+  // .menu__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 30px 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 40px;
+  }
+  // .menu__link
+  &__link {
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: color $transition;
+    &:hover {
+      color: $accent-hover;
+      transition: color $transition;
+    }
+  }
+}
