@@ -85,7 +85,7 @@
     transform: translateY(-50%);
     width: 16px;
     height: 16px;
-    background-image: url("/img/icons/search.svg");
+    background-image: url("../img/sprite.svg#search");
     @include bg;
   }
 }
@@ -114,6 +114,7 @@
   }
   // .main-slider__play
   &__play {
+    //display: block;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -121,10 +122,17 @@
     width: 32px;
     height: 41px;
     z-index: 50;
-    background-image: url("/img/icons/play-2.svg");
+    background-image: url("../img/sprite.svg#play-2");
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 1;
   }
+}
+
+.play {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .first {
@@ -140,12 +148,12 @@
 }
 
 .btn-left {
-  background-image: url("/img/icons/arrow-left.svg");
+  background-image: url("../img/sprite.svg#arrow-left");
   @include bg;
 }
 .btn-right {
   left: auto;
   right: 50px;
-  background-image: url("/img/icons/arrow-right.svg");
+  background-image: url("../img/sprite.svg#arrow-right");
   @include bg;
 }

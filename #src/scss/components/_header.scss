@@ -32,13 +32,13 @@
   }
   // .social__link--fb
   &__link--fb {
-    background-image: url("/img/icons/fb.svg");
+    background-image: url("../img/sprite.svg#fb");
     width: 11px;
     height: 20px;
   }
   // .social__link--tw
   &__link--tw {
-    background-image: url("/img/icons/tw.svg");
+    background-image: url("../img/sprite.svg#tw");
     width: 20px;
     height: 17px;
   }

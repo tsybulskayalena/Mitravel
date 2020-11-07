@@ -1,10 +1,30 @@
-const swiper1 = document.querySelector(".slider-container"),
-  swiper2 = document.querySelector(".swiper-container"),
+const preloaderContainer = document.getElementById("preloader"),
+  swiper1 = document.querySelector(".swiper-container"),
+  swiper2 = document.querySelector(".slider-container"),
   burger = document.querySelector(".burger"),
   close = document.querySelector(".menu__close"),
   menu = document.querySelector(".menu"),
   playButtonsFirst = document.querySelectorAll(".main-slider__play");
 
+// preloader
+function preloader(el) {
+    el.style.opacity = 1;
+    let interPreloader = setInterval(function () {
+        el.style.opacity = el.style.opacity - 0.05;
+        if (el.style.opacity <= 0.05) {
+            clearInterval(interPreloader);
+            preloaderContainer.style.display = "none";
+        }
+    }, 16);
+}
+
+window.onload = function () {
+    setTimeout(function () {
+        preloader(preloaderContainer);
+    }, 1000);
+};
+
+// menu
 burger.addEventListener("click", () => {
   menu.classList.add("menu--open");
 });
@@ -17,14 +37,8 @@ menu.addEventListener("click", () => {
   menu.classList.remove("menu--open");
 });
 
+// slider
 let swiperSlider1 = new Swiper(swiper1, {
-  centeredSlides: true,
-  slidesPerView: "auto",
-  loop: true,
-  spaceBetween: 105,
-});
-
-let swiperSlider2 = new Swiper(swiper2, {
   centeredSlides: true,
   slidesPerView: 1,
   loop: true,
@@ -39,7 +53,8 @@ let swiperSlider2 = new Swiper(swiper2, {
   },
 });
 
-swiperSlider2.on("transitionEnd", function () {
+// slider video pause
+swiperSlider1.on("transitionEnd", function () {
   let videos = document.querySelectorAll(".first__slider video");
   videos.forEach((el) => {
     el.pause();
@@ -50,22 +65,36 @@ swiperSlider2.on("transitionEnd", function () {
   });
 });
 
+// slider video play/stop button
 playButtonsFirst.forEach((el) => {
   el.addEventListener("click", (e) => {
     let video = e.currentTarget.closest(".main-slider__media").querySelector("video");
-    video.play();
-    e.currentTarget.style.display = "none";
-    setTimeout(() => {
-      video.volume = 0.5;
-    }, 1000);
+    if(video.paused) {
+      video.play();
+      e.currentTarget.classList.toggle("play");
+      setTimeout(() => {
+        video.volume = 0.5;
+      }, 1000);
+    } else {
+      video.pause();
+      e.currentTarget.classList.toggle("play");
+    }
   });
 });
 
+// slider
+let swiperSlider2 = new Swiper(swiper2, {
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+  spaceBetween: 105,
+});
+
+// forms
+
 // inputMask
-let selector = document.querySelectorAll("input[type=tel]");
-
-let im = new Inputmask("+99 (999) 999-99-99");
-
+let selector = document.querySelectorAll("input[type=tel]"),
+  im = new Inputmask("+99 (999) 999-99-99");
 im.mask(selector);
 
 // validate forms
@@ -86,7 +115,7 @@ let validateForms = function (selector, rules) {
         }
       };
 
-      // Add any event handlers here
+      // add any event handlers here
       xhr.open("POST", "mail.php", true);
       xhr.send(formData);
 
