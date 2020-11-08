@@ -1,4 +1,5 @@
 const preloaderContainer = document.getElementById("preloader"),
+  backtop = document.getElementById("backtop"),
   swiper1 = document.querySelector(".swiper-container"),
   swiper2 = document.querySelector(".slider-container"),
   burger = document.querySelector(".burger"),
@@ -22,6 +23,30 @@ window.onload = function () {
     setTimeout(function () {
         preloader(preloaderContainer);
     }, 1000);
+};
+
+// back to top
+let scrollShow = () => {
+  if (window.scrollY > 0) {
+    backtop.classList.add("backtop-show");
+  } else {
+    backtop.classList.remove("backtop-show");
+  }
+};
+
+window.addEventListener("scroll", scrollShow);
+
+let scrollToTop = () => {
+  let c = document.documentElement.scrollTop || document.body.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 10);
+  }
+};
+
+backtop.onclick = function(e) {
+  e.preventDefault();
+  scrollToTop();
 };
 
 // menu

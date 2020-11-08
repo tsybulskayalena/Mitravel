@@ -50,3 +50,32 @@
     opacity: 0;
   }
 }
+
+#backtop {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: $accent;
+  transition: $transition;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition;
+  z-index: 1005;
+  cursor: pointer;
+  svg {
+    transform: rotate(-90deg);
+  }
+  &:hover {
+    background-color: $neptune;
+  }
+  &.backtop-show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
