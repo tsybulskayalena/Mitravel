@@ -173,6 +173,7 @@
       margin-top: 30px;
       &:last-child {
         margin: 30px auto 0px auto;
+        width: 100%;
       }
     }
     &-bottom__copy {
@@ -412,8 +413,5 @@
   }
   .footer {
     padding: 30px 0;
-    &-bottom {
-      padding-bottom: 0;
-    }
   }
 }

@@ -23,7 +23,6 @@
   // .social__link
   &__link {
     display: block;
-    @include bg;
     transition: opacity $transition;
     &:hover {
       opacity: 0.8;
@@ -32,15 +31,17 @@
   }
   // .social__link--fb
   &__link--fb {
-    background-image: url("../img/sprite.svg#fb");
+    background-image: url("/assets/icons/sprite.svg#fb");
     width: 11px;
     height: 20px;
+    @include bg;
   }
   // .social__link--tw
   &__link--tw {
-    background-image: url("../img/sprite.svg#tw");
+    background-image: url("/assets/icons/sprite.svg#tw");
     width: 20px;
     height: 17px;
+    @include bg;
   }
 }
 .logo {

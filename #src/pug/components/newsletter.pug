@@ -1,0 +1,13 @@
+section#newsletter.newsletter
+  .container
+    .newsletter__content
+      .newsletter__text
+        h2.newsletter__title.section-title Sign Up Our Newsletter
+        p.newsletter__descr The state of Utah in the United States is home to lots of beautiful National Parks, Bryce Canyon National Park ranks as three of the most magnificent
+      form.newsletter__form.subscribe-form(action='#')
+        input(type='hidden' name='admin_email[]' value='admin@gmail.com')
+        input(type='hidden' name='form_subject' value='Заявка Mitravel')
+        input.subscribe-form__field(type='text' name='name' placeholder='Name')
+        input.subscribe-form__field(type='email' name='email' placeholder='Email' data-validate-field='email')
+        input.subscribe-form__field(type='tel' name='tel' placeholder='Phone Number' data-validate-field='tel')
+        button.btn-reset.btn.subscribe-form__btn Sign Up Now

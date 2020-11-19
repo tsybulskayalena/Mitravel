@@ -1,7 +1,7 @@
 .first {
   height: 100vh;
   min-height: 660px;
-  background-image: url("/img/first-bg.jpg");
+  background-image: url("/assets/img/first-bg.jpg");
   @include bg;
   color: $white;
   // .first__container
@@ -85,7 +85,7 @@
     transform: translateY(-50%);
     width: 16px;
     height: 16px;
-    background-image: url("../img/sprite.svg#search");
+    background-image: url("/assets/icons/sprite.svg#search");
     @include bg;
   }
 }
@@ -122,9 +122,8 @@
     width: 32px;
     height: 41px;
     z-index: 50;
-    background-image: url("../img/sprite.svg#play-2");
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url("/assets/icons/sprite.svg#play-2");
+    @include bg;
     opacity: 1;
   }
 }
@@ -148,12 +147,12 @@
 }
 
 .btn-left {
-  background-image: url("../img/sprite.svg#arrow-left");
+  background-image: url("/assets/icons/sprite.svg#arrow-left");
   @include bg;
 }
 .btn-right {
   left: auto;
   right: 50px;
-  background-image: url("../img/sprite.svg#arrow-right");
+  background-image: url("/assets/icons/sprite.svg#arrow-right");
   @include bg;
 }

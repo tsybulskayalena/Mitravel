@@ -69,13 +69,13 @@
 }
 
 .slide-1 {
-  background-image: url("/img/videos-slider-3.jpg");
+  background-image: url("/assets/img/videos-slider-3.jpg");
 }
 .slide-2 {
-  background-image: url("/img/videos-slider-2.jpg");
+  background-image: url("/assets/img/videos-slider-2.jpg");
 }
 .slide-3 {
-  background-image: url("/img/videos-slider-1.jpg");
+  background-image: url("/assets/img/videos-slider-1.jpg");
 }
 
 .slide-play {
@@ -84,9 +84,8 @@
   top: 40px;
   width: 112px;
   height: 112px;
-  background-image: url("../img/sprite.svg#video-play");
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url("/assets/icons/sprite.svg#video-play");
+  @include bg;
 }
 
 .swiper-slide video {
