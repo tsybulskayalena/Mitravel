@@ -1,18 +1,14 @@
-doctype html
-html(lang="en")
-  head
-    include components/head.pug
-  body
-    .wrapper
-      include components/preloader-backtop.pug
-      include components/header.pug
-      main.main
-        include components/menu.pug
-        include components/first.pug
-        include components/become.pug
-        include components/featured.pug
-        include components/featured-videos.pug
-        include components/newsletter.pug
-        include components/inspiration.pug
-        include components/footer.pug
+extends extends/layout
+
+block content
+  .wrapper
+    include include/preloader-backtop.pug
+    main.main
+      include include/menu.pug
+      include include/first.pug
+      include include/become.pug
+      include include/featured.pug
+      include include/featured-videos.pug
+      include include/newsletter.pug
+      include include/inspiration.pug
         

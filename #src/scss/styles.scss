@@ -1,8 +1,10 @@
-@import "_libs.scss";
-@import "_mixin.scss";
-@import "_fonts.scss";
-@import "_variables.scss";
-@import "_global.scss";
+@import "../../node_modules/normalize.css/normalize";
+@import "../../node_modules/swiper/swiper-bundle.min";
+
+@import "_mixin";
+@import "_fonts";
+@import "_variables";
+@import "_global";
 @import "_preloader-backtop.scss";
 
 @import "./components/_header.scss";
